@@ -5,6 +5,7 @@ import {
   getLeadById,
   updateLead,
   deleteLead,
+  getLeadStats
 } from '../controllers/lead_controller';
 import { protect } from '../middlewares/auth_middleware';
 
@@ -14,6 +15,7 @@ router.use(protect);
 
 router.post('/', createLead);
 router.get('/', getLeads);
+router.get('/stats', getLeadStats);
 router.get('/:id', getLeadById);
 router.put('/:id', updateLead);
 router.delete('/:id', deleteLead);
